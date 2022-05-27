@@ -2,7 +2,7 @@ use cpython::{PyResult, Python, py_module_initializer, py_fn};
 
 // add bindings to the generated python module
 // N.B: names: "rust2py" must be the name of the `.so` or `.pyd` file
-py_module_initializer!(rust2py, |py, m| {
+py_module_initializer!(miscLib, |py, m| {
     m.add(py, "__doc__", "This module is implemented in Rust.")?;
     m.add(py, "str_replacer", py_fn!(py, str_replacer(initial_string: String, ch: String, replacing_character: String, occurence: i64)))?;
     Ok(())
