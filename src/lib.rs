@@ -1,6 +1,6 @@
 use cpython::{PyResult, Python, py_module_initializer, py_fn};
 
-py_module_initializer!(miscLib, |py, m| {
+py_module_initializer!(RSmiscLib, |py, m| {
     m.add(py, "__doc__", "This module is implemented in Rust.")?;
     m.add(py, "str_replacer", py_fn!(py, str_replacer(initial_string: String, ch: String, replacing_character: String, occurrence: i64)))?;
     Ok(())
